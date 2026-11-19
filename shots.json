@@ -1,5 +1,7 @@
-[
-  { "file": "1-checklist.jpg", "path": "/", "viewport": { "width": 1280, "height": 800 } },
-  { "file": "2-silver.jpg", "path": "/", "grade": "silver", "viewport": { "width": 1280, "height": 800 } },
-  { "file": "3-bronze.jpg", "path": "/", "grade": "bronze", "scroll": 1400, "viewport": { "width": 1280, "height": 800 } }
-]
+{
+  "shots": [
+    { "file": "1-checklist.jpg", "description": "The full trophy checklist with the roadmap summary and progress controls." },
+    { "file": "2-silver.jpg", "description": "The tracker filtered to silver grade trophies." },
+    { "file": "3-bronze.jpg", "description": "A lower, scrolled section of the bronze grade checklist." }
+  ]
+}
