@@ -4,12 +4,16 @@
 [![rank](https://make.fun/badge/gta6-trophy-guide-01/nocteaquilaeking/makefun-trophy-guide/rank.svg)](https://make.fun/bounty/gta6-trophy-guide-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
 [![reward](https://make.fun/badge/gta6-trophy-guide-01/nocteaquilaeking/makefun-trophy-guide/reward.svg)](https://make.fun/bounty/gta6-trophy-guide-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
 
-Leonida Field Guide is an offline tracker and roadmap for all 55 GTA VI PlayStation 5 trophies. Browse trophy descriptions and guide notes, filter by grade or kind, search names, and save earned progress in this browser. Progress can also be exported or imported as JSON.
+Leonida Field Guide is an offline checklist and route planner for the 55 PlayStation 5 trophies in Grand Theft Auto VI. Filter and search trophy entries, reveal story details with the spoiler control, mark progress, and move through the six roadmap stages. Progress stays in this browser and can be exported or restored from JSON.
 
-## Run the guide
+## Open the guide
 
-Open `app/index.html` in a browser, or serve the `app/` directory with a static file server. The page loads its trophy records from `app/data/trophies.json` and does not need a build step.
+Open `app/index.html` directly, or serve the `app/` folder using any static file server. There is no build step, network service, or remote dependency.
 
-## Screenshots and entry package
+## Trophy data
 
-The three JPEG captures in `screenshots/` show the checklist, silver-grade trophies, and a scrolled bronze-grade view. The screenshot harness can open the page with `?grade=silver` or `?grade=bronze&scroll=1400` for the filtered captures. Run `node main.ts` to copy the app and captures to `MAKEFUN_OUTPUT_DIR` (default `/output`) and create `dossier.json`.
+`app/data/trophies.json` stores the game and platform labels, a `columns` array describing each field, and `records` as positional arrays in that same field order. The tracker pairs each record with those column names when it loads.
+
+## Package and screenshots
+
+The three JPEG images in `screenshots/` illustrate the full tracker, the silver filter, and a scrolled bronze view. The corresponding views use `?grade=silver` and `?grade=bronze&scroll=1400`. Run `node main.ts` to stage the app and captures and create `dossier.json` in `MAKEFUN_OUTPUT_DIR` (default `/output`).
