@@ -1,43 +1,32 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101b20">
-  <title>Leonida Field Guide — GTA VI Trophies</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#081b22">
+<title>Leonida Field Guide — GTA VI Trophies</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="shell">
-    <header class="masthead">
-      <div class="brand"><span class="sun-mark" aria-hidden="true">✳</span><div><p class="eyebrow">FIELD GUIDE · PLAYSTATION 5</p><h1>LEONIDA <span>FIELD GUIDE</span></h1></div></div>
-      <div class="offline"><i></i> OFFLINE READY</div>
-    </header>
-    <main>
-      <section class="hero" aria-labelledby="intro-title">
-        <div class="hero-copy"><p class="eyebrow">VICE CITY / LEONIDA</p><h2 id="intro-title">The long way to<br><em>Legend.</em></h2><p class="lede">A field notebook for all 55 trophies. Mark the miles, keep the missables in sight, and chart your route to platinum.</p></div>
-        <div class="progress-panel"><div class="progress-top"><div><span class="eyebrow">YOUR RUN</span><strong id="progress-count">0 <small>/ 55</small></strong><span id="progress-percent" class="percent">0% complete</span></div><div class="ring" id="progress-ring" aria-label="0 percent complete"><span id="ring-value">0%</span></div></div><div class="progress-track"><span id="progress-fill"></span></div><div class="grade-progress" id="grade-progress"></div></div>
-      </section>
-      <nav class="view-tabs" aria-label="Guide views"><button class="tab active" id="checklist-tab" type="button">Trophy checklist <span>55</span></button><button class="tab" id="roadmap-tab" type="button">Roadmap <span>04 STAGES</span></button><span class="tab-note">YOUR PROGRESS SAVES ON THIS DEVICE</span></nav>
-      <section id="checklist-view" class="guide-view">
-        <div class="toolbar">
-          <div class="filter-block"><label for="search">Find a trophy</label><div class="search-wrap"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search names…" autocomplete="off"></div></div>
-          <div class="filter-block"><label for="grade">Grade</label><select id="grade"><option value="all">All grades</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></div>
-          <div class="filter-block"><label for="kind">Kind</label><select id="kind"><option value="all">Every kind</option><option value="story">Story</option><option value="missable">Missable</option><option value="collectibles">Collectibles</option><option value="activities">Activities</option><option value="online">Online</option></select></div>
-          <label class="spoiler-toggle"><input id="spoilers" type="checkbox"><span class="switch"></span><span>Hide spoilers</span></label>
-          <div class="file-actions"><button id="export" class="button quiet" type="button">Export <span>↓</span></button><label class="button quiet import-button">Import <span>↑</span><input id="import" type="file" accept="application/json"></label></div>
-        </div>
-        <div class="list-heading"><div><p class="eyebrow">THE COLLECTION</p><h2>All trophies <span id="result-count">55</span></h2></div><p id="missable-note" class="legend"><b>!</b> Mission / choice related</p></div>
-        <div id="rows" class="trophy-list" aria-live="polite"></div>
-        <div id="empty-state" class="empty-state" hidden>No trophies match these filters. Clear a filter and try again.</div>
-      </section>
-      <section id="roadmap-view" class="guide-view" hidden>
-        <div class="roadmap-intro"><p class="eyebrow">A ROUTE THROUGH THE STATE</p><h2>Roadmap to <em>platinum</em></h2><p>Follow the story milestones first, clear character strands and open-ended goals before leaving them behind, then sweep activities and the map. Timing warnings reflect only what the official descriptions say.</p></div>
-        <div id="roadmap" class="roadmap"></div>
-      </section>
-    </main>
-    <footer><span>LEONIDA FIELD GUIDE <b>·</b> PERSONAL PROGRESS STORED LOCALLY</span><span>55 TROPHIES / ONE PLATINUM</span></footer>
-  </div>
-  <script type="module" src="app.js"></script>
+<div class="site-shell">
+<header class="masthead">
+  <div class="brand"><span class="sun-mark" aria-hidden="true">◉</span><div><p class="eyebrow">LEONIDA · FIELD NOTES</p><h1>VI Trophy Guide</h1></div></div>
+  <div class="header-progress"><div class="progress-copy"><span>PLATINUM RUN</span><strong id="progress">0 / 55</strong></div><div class="progress-track"><i id="progress-bar"></i></div><p id="percent">0% complete</p></div>
+</header>
+<nav class="view-tabs" aria-label="Guide views"><button class="tab active" data-view="tracker">Trophy tracker <span>55</span></button><button class="tab" data-view="roadmap">Roadmap <span>6 stages</span></button></nav>
+<main>
+<section id="tracker-view" class="view active">
+  <section class="grade-strip" id="grade-summary" aria-label="Progress by grade"></section>
+  <div class="toolbar"><div class="filter-group"><label class="search-box"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search trophies" aria-label="Search trophy names"></label>
+  <label class="filter-label">GRADE<select id="grade"><option value="all">All grades</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
+  <label class="filter-label">KIND<select id="kind"><option value="all">All kinds</option><option value="story">Story</option><option value="missable">Missable</option><option value="collectibles">Collectibles</option><option value="activities">Activities</option><option value="online">Online</option></select></label></div>
+  <div class="actions"><label class="spoiler-toggle"><input id="spoilers" type="checkbox"><span class="switch"></span><span>Spoilers</span></label><button id="export" class="quiet-button" type="button">Export</button><label class="quiet-button import-button">Import<input id="import" type="file" accept="application/json"></label></div></div>
+  <p id="result-count" class="result-count"></p><div id="cards" class="cards" aria-live="polite"></div>
+</section>
+<section id="roadmap-view" class="view"><div class="roadmap-intro"><p class="eyebrow">A ROUTE THROUGH LEONIDA</p><h2>Road to the platinum</h2><p>Story milestones first, then the wider completion sweep. Mission trophies are flagged where their named content sits in the sequence; the official list does not identify a point of no return.</p></div><div id="roadmap" class="roadmap"></div></section>
+</main>
+<footer><span>OFFLINE FIELD GUIDE</span><span>55 trophies · PlayStation 5</span></footer>
+</div>
+<script type="module" src="app.js"></script>
 </body>
 </html>
